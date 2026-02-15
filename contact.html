@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #000000;">
+<head>
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        html, body {
+            background-color: #000000 !important;
+            color: #E8E6E1 !important;
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            color: #E8E6E1;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #E8E6E1 !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        p, span, div {
+            color: #E8E6E1;
+        }
+        a {
+            color: #D4E157;
+        }
+        .navbar {
+            background: #000000 !important;
+            border-bottom: 2px solid #0D5C3F !important;
+        }
+        .logo-text {
+            color: #E8E6E1 !important;
+        }
+        .logo-subtitle {
+            color: #D4E157 !important;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #D4E157, #0D5C3F) !important;
+            color: #000000 !important;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SERA Inc.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: #000000;">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">SERA</span>
+                <span class="logo-subtitle">EDGE.AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="solution.html">SOLUTION</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header contact-header">
+        <div class="container">
+            <span class="page-tag">GET IN TOUCH</span>
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">Let's Build the Future Together</p>
+        </div>
+        <div class="header-particles"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <p class="form-intro">Interested in BREED BOX or have questions? Fill out the form below and our team will get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest">Area of Interest *</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select an option</option>
+                                <option value="breed-box">BREED BOX Solution</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="demo">Request a Demo</option>
+                                <option value="pricing">Pricing Information</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>I would like to receive updates and news from SERA Inc.</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary form-submit">
+                            Send Message
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Email</div>
+                                <a href="/cdn-cgi/l/email-protection#0261676d42716770632c616b767b"><span class="__cf_email__" data-cfemail="ceadaba18ebdabbcafe0ada7bab7">[email&#160;protected]</span></a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Phone (Korea)</div>
+                                <a href="tel:+82-010-3834-3509">+82-010-3834-3509</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Phone (USA)</div>
+                                <a href="tel:+1-551-370-6544">+1-551-370-6544</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="10" r="3"/>
+                                    <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Website</div>
+                                <a href="https://www.sera.city" target="_blank">www.sera.city</a>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/sera5997" target="_blank" class="social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                                <span>@sera5997</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="office-locations">
+                        <h3>Our Locations</h3>
+                        
+                        <div class="location-card">
+                            <h4>🏢 Headquarters (HQ)</h4>
+                            <p>303-6, Centum Green Tower<br>
+                            78 Centumjungang-ro<br>
+                            Haeundae-gu, Busan<br>
+                            South Korea</p>
+                        </div>
+
+                        <div class="location-card">
+                            <h4>🏭 Smart Center (SC)</h4>
+                            <p>29 Jukjeon 1-gil<br>
+                            Geumjeong-gu, Busan<br>
+                            South Korea</p>
+                        </div>
+
+                        <div class="location-card">
+                            <h4>🏗️ Branch Office (BO)</h4>
+                            <p>3F, 106-17 Wachon-dong<br>
+                            Seobuk-gu, Cheonan-si<br>
+                            Chungcheongnam-do, South Korea</p>
+                        </div>
+
+                        <div class="location-card">
+                            <h4>🔬 Research Center (RC)</h4>
+                            <p>Room 104, Bldg. 28<br>
+                            283 Goyang-daero, Ilsanseo-gu<br>
+                            Goyang-si, Gyeonggi-do<br>
+                            South Korea (KICT)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Optional) -->
+    <section class="map-section">
+        <div class="map-placeholder">
+            <div class="map-overlay">
+                <h3>Visit Our Headquarters</h3>
+                <p>Centum Green Tower, Busan, South Korea</p>
+                <a href="https://maps.google.com/?q=303-6+Centum+Green+Tower+78+Centumjungang-ro+Haeundae-gu+Busan" target="_blank" class="btn-secondary">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">SERA</span>
+                        <span class="logo-subtitle">EDGE.AI</span>
+                    </div>
+                    <p class="footer-description">Sustainable Environment Renewable Architecture</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/sera5997" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="solution.html">Our Solution</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4526202a05362037246b262c313c">[email&#160;protected]</a></li>
+                        <li>📱 +82-010-3834-3509</li>
+                        <li>🌐 www.sera.city</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Headquarters</h4>
+                    <p>303-6, Centum Green Tower<br>
+                    78 Centumjungang-ro<br>
+                    Haeundae-gu, Busan<br>
+                    South Korea</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
