@@ -98,55 +98,36 @@ a {
     align-items: center;
 }
 
+/* ===== Header logo layout ===== */
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    max-width: 189px; /* 약 5cm */
+  display: flex;
+  align-items: center;
+  gap: 0;          /* 동그라미 제거했으니 gap 최소화 */
+  max-width: none; /* 189px 제한 때문에 잘릴 수 있어 제거 */
 }
 
-/* 원형 로고 - 주 원 */
-.logo::before {
-    content: '';
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #0D5C3F, #4A9B7F);
-    border-radius: 50%;
-    box-shadow: 0 0 8px rgba(13, 92, 63, 0.5);
-    display: block;
-    flex-shrink: 0;
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-/* 원형 로고 - 포인트 원 (노란색) */
-.logo::after {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background: #D4E157;
-    border-radius: 50%;
-    position: absolute;
-    left: 32px;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0 0 6px rgba(212, 225, 87, 0.6);
+.logo-img {
+  height: 48px;     /* ← 여기서 로고 크기 조절 */
+  width: auto;
+  max-width: 240px; /* 너무 길면 제한 */
+  display: block;
+  object-fit: contain;
 }
 
-.logo-text {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 1px;
-    line-height: 1;
-}
-
+/* EDGE.AI는 그대로 */
 .logo-subtitle {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 11px;
-    color: #D4E157;
-    letter-spacing: 2px;
-    font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .nav-menu {
@@ -230,16 +211,16 @@ a {
 }
 
 .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.0.7) 0%,
-        rgba(0, 0, 0, 0.6) 100%
-    );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
 }
 
 .hero-content {
@@ -267,7 +248,6 @@ a {
     background-clip: text;
     margin-bottom: 20px;
     animation: glow 2s ease-in-out infinite alternate;
-}
 
 @keyframes glow {
     from {
@@ -667,46 +647,26 @@ a {
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 15px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
 
-.footer-logo::before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(135deg, #0D5C3F, #4A9B7F);
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(13, 92, 63, 0.4);
-    display: block;
-    flex-shrink: 0;
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.footer-logo::after {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: #D4E157;
-    border-radius: 50%;
-    position: absolute;
-    left: 17px;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0 0 3px rgba(212, 225, 87, 0.5);
+.footer-logo-img {
+  height: 36px;
+  width: auto;
+  max-width: 200px;
+  display: block;
+  object-fit: contain;
 }
-
-.footer-logo .logo-text {
-    font-size: 16px;
-    color: #ffffff;
-}
-
-.footer-logo .logo-subtitle {
-    font-size: 6px;
-}
-
 .footer-description {
     font-size: 14px;
     color: var(--text-secondary);
