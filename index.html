@@ -42,6 +42,51 @@
             background: linear-gradient(135deg, #D4E157, #0D5C3F) !important;
             color: #000000 !important;
         }
+                /* ── Language Switcher ── */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 24px;
+        }
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: 1.5px solid rgba(212, 225, 87, 0.4);
+            color: #a8b5ad !important;
+            background: transparent;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+        .lang-btn:hover {
+            border-color: #D4E157;
+            color: #D4E157 !important;
+            background: rgba(212, 225, 87, 0.08);
+        }
+        .lang-btn--active {
+            border-color: #D4E157 !important;
+            color: #000000 !important;
+            background: #D4E157 !important;
+        }
+        .lang-btn svg {
+            color: inherit;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 12px;
+            }
+            .lang-btn {
+                padding: 4px 9px;
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body style="background-color: #000000;">
@@ -59,6 +104,7 @@
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="solution.html">SOLUTION</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
+            </ul>
                 <!-- Language Switcher -->
                 <div class="lang-switcher">
                     <a href="index-kr.html" class="lang-btn lang-btn--kr">
@@ -75,7 +121,6 @@
                     </a>
                 </div>
     
-            </ul>
             <div class="hamburger">
                 <span></span>
                 <span></span>
