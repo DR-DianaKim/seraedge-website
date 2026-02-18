@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SERA Inc.</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        :root {
+            --accent: #D4E157;
+            --green: #0D5C3F;
+            --bg: #000000;
+            --card-bg: #0d0d0d;
+            --border: #1a2a1a;
+            --text: #E8E6E1;
+            --muted: #9a9a8a;
+        }
+
+        html, body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { opacity: 0.8; }
+
+        h1, h2, h3, h4, h5, h6 { color: var(--text); }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(0,0,0,0.95);
+            border-bottom: 2px solid var(--green);
+            backdrop-filter: blur(10px);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .logo { display: flex; align-items: center; }
+        .logo-link { display: flex; align-items: center; gap: 8px; }
+        .logo-img { height: 36px; }
+        .logo-subtitle {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-menu a {
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--accent); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); }
+
+        /* ── PAGE HEADER ── */
+        .page-header {
+            position: relative;
+            padding: 100px 0 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #0a1a0a 0%, #000 100%);
+            overflow: hidden;
+        }
+        .page-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .page-title {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-subtitle {
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        /* ── SECTION TAGS / HEADERS ── */
+        .section-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-subtitle { color: var(--muted); font-size: 16px; }
+
+        /* ── MISSION ── */
+        .mission-section { padding: 100px 0; }
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .mission-text .section-tag { margin-bottom: 16px; }
+        .mission-text h2 {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+        .mission-text p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .mission-text p strong { color: var(--text); }
+        .mission-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .mission-stat {
+            background: var(--card-bg);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .stat-label { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* ── LEADERSHIP ── */
+        .leadership-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #000 0%, #050f05 50%, #000 100%);
+        }
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .leader-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .leader-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--green);
+        }
+        .leader-image {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #0a2010, #1a3a20);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .leader-placeholder {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--accent);
+            opacity: 0.8;
+        }
+        .leader-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px 16px 12px;
+        }
+        .leader-role {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .leader-info { padding: 24px; }
+        .leader-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .leader-title {
+            color: var(--accent);
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+        .leader-bio {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .leader-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .leader-highlights span {
+            font-size: 12px;
+            color: var(--text);
+            background: rgba(13, 92, 63, 0.2);
+            border: 1px solid rgba(13, 92, 63, 0.4);
+            border-radius: 6px;
+            padding: 5px 10px;
+        }
+
+        /* ── TIMELINE ── */
+        .timeline-section { padding: 100px 0; }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--green), var(--accent));
+        }
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 40px);
+            margin-bottom: 48px;
+            position: relative;
+        }
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 40px);
+        }
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translate(-50%, -50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg);
+            box-shadow: 0 0 12px var(--accent);
+            z-index: 1;
+        }
+        .timeline-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 320px;
+        }
+        .timeline-content h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .timeline-content p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+        /* ── VALUES ── */
+        .values-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #000 0%, #050f05 50%, #000 100%);
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .value-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .value-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--green);
+        }
+        .value-icon { font-size: 40px; margin-bottom: 16px; }
+        .value-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .value-card p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+        /* ── CTA ── */
+        .cta-section {
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        .cta-background {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(13,92,63,0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-content h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .cta-content p { color: var(--muted); font-size: 18px; margin-bottom: 40px; }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--green));
+            color: #000 !important;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 14px 36px;
+            border-radius: 8px;
+            transition: opacity 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+        .btn-primary.large { padding: 18px 48px; font-size: 15px; }
+
+        /* ── FOOTER ── */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 60px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .footer-description { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+        .footer-social a:hover { border-color: var(--accent); }
+        .footer-social svg { width: 16px; height: 16px; }
+        .footer-column h4 {
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul li a { color: var(--muted); font-size: 14px; transition: color 0.2s; }
+        .footer-column ul li a:hover { color: var(--accent); }
+        .footer-column p { color: var(--muted); font-size: 14px; line-height: 1.8; }
+        .contact-info li { color: var(--muted); font-size: 14px; }
+        .contact-info a { color: var(--muted); }
+        .contact-info a:hover { color: var(--accent); }
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-bottom p { color: var(--muted); font-size: 13px; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .mission-content { grid-template-columns: 1fr; gap: 40px; }
+            .leadership-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .nav-menu { display: none; }
+            .hamburger { display: flex; }
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-right: 0;
+                padding-left: 56px;
+            }
+            .timeline-marker { left: 20px; }
+            .timeline-content { max-width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .mission-stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="https://seraedge.ai" class="logo-link" target="_blank" rel="noopener">
+                    <img src="images/sera-logo.svg" alt="SERA Inc." class="logo-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.fontSize='20px'; this.nextElementSibling.style.fontWeight='800'; this.nextElementSibling.style.color='#E8E6E1';">
+                    <span class="logo-subtitle">SERA EDGE.AI</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html" class="active">ABOUT</a></li>
+                <li><a href="solution.html">SOLUTION</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div class="hamburger" onclick="this.closest('nav').querySelector('.nav-menu').style.display = this.closest('nav').querySelector('.nav-menu').style.display === 'flex' ? 'none' : 'flex'; this.closest('nav').querySelector('.nav-menu').style.flexDirection = 'column'; this.closest('nav').querySelector('.nav-menu').style.position = 'absolute'; this.closest('nav').querySelector('.nav-menu').style.top = '64px'; this.closest('nav').querySelector('.nav-menu').style.left = '0'; this.closest('nav').querySelector('.nav-menu').style.right = '0'; this.closest('nav').querySelector('.nav-menu').style.background = '#000'; this.closest('nav').querySelector('.nav-menu').style.padding = '16px 24px';">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="page-tag">WHO WE ARE</span>
+            <h1 class="page-title">About SERA Inc.</h1>
+            <p class="page-subtitle">Pioneering Sustainable Data Center Innovation</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <span class="section-tag">OUR MISSION</span>
+                    <h2>Building the Future of Data Infrastructure</h2>
+                    <p>SERA Inc. stands for <strong>Sustainable Environment Renewable Architecture</strong>. We are revolutionizing the data center industry through innovative passive and active air-hybrid cooling technologies that dramatically reduce energy consumption while maximizing performance.</p>
+                    <p>Our mission is to create next-generation edge AI modular data centers that are not only highly efficient but also environmentally responsible. With our proprietary BREED BOX technology, we're setting new standards for sustainability in critical digital infrastructure.</p>
+                </div>
+                <div class="mission-visual">
+                    <div class="mission-stats-grid">
+                        <div class="mission-stat">
+                            <div class="stat-value">1.2–1.3</div>
+                            <div class="stat-label">PUE Rating</div>
+                        </div>
+                        <div class="mission-stat">
+                            <div class="stat-value">28%</div>
+                            <div class="stat-label">Energy Savings</div>
+                        </div>
+                        <div class="mission-stat">
+                            <div class="stat-value">100%</div>
+                            <div class="stat-label">Eco-Friendly</div>
+                        </div>
+                        <div class="mission-stat">
+                            <div class="stat-value">25+</div>
+                            <div class="stat-label">Years R&amp;D</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">LEADERSHIP</span>
+                <h2 class="section-title">Meet Our Visionary Team</h2>
+                <p class="section-subtitle">World-class expertise driving innovation</p>
+            </div>
+
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <div class="leader-placeholder">DK</div>
+                        <div class="leader-overlay">
+                            <span class="leader-role">CEO &amp; Founder</span>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Dr. Doyeon Diana Kim</h3>
+                        <p class="leader-title">Ph.D. | Chief Executive Officer</p>
+                        <p class="leader-bio">Expert in Sustainable Architecture with extensive research background at RPI (USA) CASE. Graduated in Architecture Planning at Pusan National University. Leading SERA's vision for sustainable data center innovation.</p>
+                        <div class="leader-highlights">
+                            <span>🎓 Ph.D. Sustainable Architecture</span>
+                            <span>🔬 Hibrid material & Wall Hvac Tech development </span>
+                            <span>👩‍💼 U.S. Embassy Recognized</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <div class="leader-placeholder">JL</div>
+                        <div class="leader-overlay">
+                            <span class="leader-role">Technical Lead</span>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Jason Lee</h3>
+                        <p class="leader-title">M.S. | Installation &amp; Electrical Supervisor</p>
+                        <p class="leader-bio">Microsoft Data Center Korea Nocksan veteran. Extensive experience in data center installation and electrical systems. Ensures BREED BOX deployments meet the highest technical standards.</p>
+                        <div class="leader-highlights">
+                            <span>⚡ MS Data Center Veteran</span>
+                            <span>🔌 Electrical Systems Expert</span>
+                            <span>🏢 Installation Specialist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">MILESTONES</span>
+                <h2 class="section-title">Our Journey of Excellence</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>U.S. Embassy Recognition</h3>
+                        <p>Selected as a U.S. Embassy-supported women-led company and participant in the Supply Chain Security Program</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>KAIST R&amp;D Verification</h3>
+                        <p>Performance verification in progress on the KAIST testbed (IRIS Lab), validating our cutting-edge technology</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Government Awards</h3>
+                        <p>Received Minister's Commendation from the Ministry of SMEs and Startups, selected for TIPS final list</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>International Certifications</h3>
+                        <p>Achieved ISO 9001, ISO 14001, ESG-excellent, Security-excellent, and Family-friendly company certifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">OUR VALUES</span>
+                <h2 class="section-title">What Drives Us</h2>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Sustainability</h3>
+                    <p>Environmental responsibility is at the core of everything we do, from natural fiber insulation to carbon emission reduction.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>Continuously pushing boundaries with cutting-edge technology and novel approaches to data center cooling.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Excellence</h3>
+                    <p>Uncompromising quality standards in design, manufacturing, and deployment of our solutions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Partnership</h3>
+                    <p>Building lasting relationships with clients, suppliers, and stakeholders based on trust and mutual success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-background"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Us in Building a Sustainable Future</h2>
+                <p>Partner with SERA to transform your data infrastructure</p>
+                <a href="contact.html" class="btn-primary large">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <a href="https://seraedge.ai" class="logo-link" target="_blank" rel="noopener">
+                            <img src="images/sera-logo.svg" alt="SERA Inc." class="logo-img"
+                                 onerror="this.style.display='none';">
+                            <span class="logo-subtitle">SERA EDGE.AI</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">Sustainable Environment Renewable Architecture</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/sera5997" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="solution.html">Our Solution</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li>📧 <a href="mailto:info@seraedge.ai">info@seraedge.ai</a></li>
+                        <li>🌐 www.sera.city</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Headquarters</h4>
+                    <p>303-6, Centum Green Tower<br>
+                    78 Centumjungang-ro<br>
+                    Haeundae-gu, Busan<br>
+                    South Korea</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 SERA Inc. All rights reserved.</p>
+                <p>Sustainable Environment Renewable Architecture</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
