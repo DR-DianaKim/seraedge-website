@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #000000;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERA Inc. | Next-Gen Edge AI Data Centers</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        html, body {
+            background-color: #000000 !important;
+            color: #E8E6E1 !important;
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            color: #E8E6E1;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #E8E6E1 !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        p, span, div {
+            color: #E8E6E1;
+        }
+        a {
+            color: #D4E157;
+        }
+        .navbar {
+            background: #000000 !important;
+            border-bottom: 2px solid #0D5C3F !important;
+        }
+        .logo-text {
+            color: #ffffff !important;
+        }
+        .logo-subtitle {
+            color: #D4E157 !important;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #D4E157, #0D5C3F) !important;
+            color: #000000 !important;
+        }
+                /* ── Language Switcher ── */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 24px;
+        }
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: 1.5px solid rgba(212, 225, 87, 0.4);
+            color: #a8b5ad !important;
+            background: transparent;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+        .lang-btn:hover {
+            border-color: #D4E157;
+            color: #D4E157 !important;
+            background: rgba(212, 225, 87, 0.08);
+        }
+        .lang-btn--active {
+            border-color: #D4E157 !important;
+            color: #000000 !important;
+            background: #D4E157 !important;
+        }
+        .lang-btn svg {
+            color: inherit;
+        }
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin-left: 12px;
+            }
+            .lang-btn {
+                padding: 4px 9px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #000000;">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+         <div class="logo">
+           <a href="https://seraedge.ai" class="logo-link" target="_blank" rel="noopener">
+             <img src="images/sera-logo.svg" alt="SERA Inc." class="logo-img">
+             <span class="logo-subtitle">EDGE.AI</span>
+           </a>
+         </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="solution.html">SOLUTION</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <a href="index-kr.html" class="lang-btn lang-btn--kr">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 2C12 2 8 7 8 12s4 10 4 10" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 2C12 2 16 7 16 12s-4 10-4 10" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M2 12h20" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        KR
+                    </a>
+                    <a href="index.html" class="lang-btn lang-btn--en lang-btn--active">
+                        EN
+                    </a>
+                </div>
+    
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Video Hero Section -->
+    <section class="hero-section">
+        <div class="video-background">
+            <video autoplay muted loop playsinline id="heroVideo">
+                <source src="video/hero-video.mp4" type="video/mp4">
+                <!-- Fallback gradient if video not available -->
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="glitch-wrapper">
+                <h1 class="hero-title" data-text="NEXT-GEN EDGE AI">NEXT-GEN EDGE AI</h1>
+            </div>
+            <h2 class="hero-subtitle">Passive & Active Air-Hybrid Cooling</h2>
+            <p class="hero-description">Modular Data Centers Built for the Future</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">1.2</div>
+                    <div class="stat-label">PUE Rating</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">28%</div>
+                    <div class="stat-label">Power Savings</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Eco-Friendly</div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="solution.html" class="btn-primary">Explore BREED BOX</a>
+                <a href="contact.html" class="btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to discover</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CORE TECHNOLOGY</span>
+                <h2 class="section-title">The BREED BOX Revolution</h2>
+                <p class="section-subtitle">Defining the Future of Sustainable Data Centers</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Natural Fiber Insulation</h3>
+                    <p>Advanced safety insulation with superior sound absorption performance while dramatically reducing carbon emissions.</p>
+                    <div class="feature-glow"></div>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3>Wall-Integrated HVAC</h3>
+                    <p>Built-in Wall HVAC combined with Containment Structure optimizes airflow and blocks external heat.</p>
+                    <div class="feature-glow"></div>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M2 12h20"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </div>
+                    <h3>Non-Combustible Materials</h3>
+                    <p>Eco-friendly non-combustible materials ensure maximum fire safety for critical infrastructure.</p>
+                    <div class="feature-glow"></div>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/>
+                            <circle cx="18" cy="6" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>AI-Controlled Efficiency</h3>
+                    <p>PUE 1.2~1.3 with 28% power savings via AI Control, outperforming competitors (PUE 1.6~2.0).</p>
+                    <div class="feature-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <section class="recognition-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ACHIEVEMENTS</span>
+                <h2 class="section-title">Recognized Excellence</h2>
+            </div>
+
+            <div class="recognition-grid">
+                <div class="recognition-item">
+                    <div class="recognition-icon">🇺🇸</div>
+                    <h4>U.S. Embassy Recognition</h4>
+                    <p>Selected as U.S. Embassy-supported women-led company</p>
+                </div>
+
+                <div class="recognition-item">
+                    <div class="recognition-icon">🔬</div>
+                    <h4>KAIST R&D Verification</h4>
+                    <p>Performance verification on KAIST testbed (IRIS Lab)</p>
+                </div>
+
+                <div class="recognition-item">
+                    <div class="recognition-icon">🏆</div>
+                    <h4>Government Awards</h4>
+                    <p>Minister's Commendation & TIPS Final List</p>
+                </div>
+
+                <div class="recognition-item">
+                    <div class="recognition-icon">✓</div>
+                    <h4>International Certifications</h4>
+                    <p>ISO 9001, ISO 14001, ESG-excellent</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Data Infrastructure?</h2>
+            <p>Join the next generation of sustainable, efficient data centers</p>
+            <a href="contact.html" class="btn-primary large">Contact Us Today</a>
+        </div>
+        <div class="cta-background"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                 <div class="footer-logo">
+                  <a href="https://seraedge.ai" class="logo-link" target="_blank" rel="noopener">
+                    <img src="images/sera-logo.svg" alt="SERA Inc." class="logo-img">
+                    <span class="logo-subtitle">EDGE.AI</span>
+                  </a>
+                 </div>
+                    <p class="footer-description">Sustainable Environment Renewable Architecture</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/sera5997" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="solution.html">Our Solution</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="56353339162533243778353f222f">info@sera.city</a></li>
+                        <li>🌐 www.sera.city</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Headquarters</h4>
+                    <p>303-6, Centum Green Tower<br>
+                    78 Centumjungang-ro<br>
+                    Haeundae-gu, Busan<br>
+                    South Korea</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 SERA Inc. All rights reserved.</p>
+                <p>Sustainable Environment Renewable Arch
